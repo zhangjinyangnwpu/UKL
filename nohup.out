@@ -1,0 +1,1613 @@
+2020-04-10 15:26:29.686976: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2020-04-10 15:26:36.233418: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1405] Found device 0 with properties: 
+name: GeForce GTX 1080 Ti major: 6 minor: 1 memoryClockRate(GHz): 1.582
+pciBusID: 0000:04:00.0
+totalMemory: 10.91GiB freeMemory: 10.75GiB
+2020-04-10 15:26:36.233487: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1484] Adding visible gpu devices: 0
+2020-04-10 15:26:36.666468: I tensorflow/core/common_runtime/gpu/gpu_device.cc:965] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-04-10 15:26:36.666529: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971]      0 
+2020-04-10 15:26:36.666539: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] 0:   N 
+2020-04-10 15:26:36.666949: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1097] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10400 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080 Ti, pci bus id: 0000:04:00.0, compute capability: 6.1)
+/home/zhangjinyang/.local/lib/python3.5/site-packages/requests/__init__.py:83: RequestsDependencyWarning: Old version of cryptography ([1, 2, 3]) may cause slowdown.
+  warnings.warn(warning, RequestsDependencyWarning)
+WARNING:tensorflow:From /home/zhangjinyang/.local/lib/python3.5/site-packages/tensorflow/python/framework/function.py:986: calling Graph.create_op (from tensorflow.python.framework.ops) with compute_shapes is deprecated and will be removed in a future version.
+Instructions for updating:
+Shapes are always computed; don't use the compute_shapes as it has no effect.
+DataSet PaviaU shape is (610, 340, 103)
+traindata-ID 1: 10; testdata-ID 1: 6621
+traindata-ID 2: 10; testdata-ID 2: 18639
+traindata-ID 3: 10; testdata-ID 3: 2089
+traindata-ID 4: 10; testdata-ID 4: 3054
+traindata-ID 5: 10; testdata-ID 5: 1335
+traindata-ID 6: 10; testdata-ID 6: 5019
+traindata-ID 7: 10; testdata-ID 7: 1320
+traindata-ID 8: 10; testdata-ID 8: 3672
+traindata-ID 9: 10; testdata-ID 9: 937
+total train 90, total test 42686
+Tensor("Placeholder_1:0", shape=(?, 3, 3, 103), dtype=float32)
+Tensor("classifer/conv00/swish_f32:0", shape=(?, 1, 3, 32, 64), dtype=float32)
+Tensor("classifer/conv01/swish_f32:0", shape=(?, 1, 3, 30, 64), dtype=float32)
+Tensor("classifer/conv02/swish_f32:0", shape=(?, 1, 3, 30, 64), dtype=float32)
+Tensor("classifer/conv10/swish_f32:0", shape=(?, 1, 1, 14, 128), dtype=float32)
+Tensor("classifer/conv11/swish_f32:0", shape=(?, 1, 1, 12, 128), dtype=float32)
+Tensor("classifer/conv12/swish_f32:0", shape=(?, 1, 1, 12, 128), dtype=float32)
+Tensor("classifer/conv20/swish_f32:0", shape=(?, 1, 1, 5, 256), dtype=float32)
+Tensor("classifer/conv21/swish_f32:0", shape=(?, 1, 1, 3, 256), dtype=float32)
+Tensor("classifer/conv22/swish_f32:0", shape=(?, 1, 1, 3, 256), dtype=float32)
+Tensor("classifer/global_info/flatten/Reshape:0", shape=(?, 512), dtype=float32)
+step 1000, loss_cluster 0.084445 ,loss_classification 0.000126,loss_fusion 0.000105,loss_total 0.084677 lr 0.000990
+step 2000, loss_cluster 0.003331 ,loss_classification 0.000039,loss_fusion 0.000029,loss_total 0.003399 lr 0.000979
+step 3000, loss_cluster 0.020193 ,loss_classification 0.003424,loss_fusion 0.001793,loss_total 0.025410 lr 0.000969
+step 4000, loss_cluster 0.013539 ,loss_classification 0.000013,loss_fusion 0.000005,loss_total 0.013557 lr 0.000959
+step 5000, loss_cluster 0.000609 ,loss_classification 0.000002,loss_fusion 0.000002,loss_total 0.000614 lr 0.000949
+4707 5000 0.9414
+9163 10000 0.9163
+13317 15000 0.8878
+18043 20000 0.90215
+22616 25000 0.90464
+26448 30000 0.8816
+31442 35000 0.8983428571428571
+36014 40000 0.90035
+38190 42686 0.8946727264208405
+test end!
+1 class: ( 6103.0 / 6621.0 ) 0.9217640839752304
+2 class: ( 16761.0 / 18639.0 ) 0.8992435216481571
+3 class: ( 941.0 / 2089.0 ) 0.4504547630445189
+4 class: ( 3042.0 / 3054.0 ) 0.9960707269155207
+5 class: ( 1335.0 / 1335.0 ) 1.0
+6 class: ( 5017.0 / 5019.0 ) 0.9996015142458657
+7 class: ( 1293.0 / 1320.0 ) 0.9795454545454545
+8 class: ( 2761.0 / 3672.0 ) 0.7519063180827886
+9 class: ( 937.0 / 937.0 ) 1.0
+confusion matrix:
+[[ 6103     1    56     0     0     0    21    55     0]
+ [    0 16761   285    11     0     1     0    64     0]
+ [    0     0   941     0     0     0     0   152     0]
+ [    0     4     0  3042     0     1     0     0     0]
+ [    0     0     0     0  1335     0     0     0     0]
+ [  502  1872     8     1     0  5017     6   640     0]
+ [   15     0     0     0     0     0  1293     0     0]
+ [    1     1   799     0     0     0     0  2761     0]
+ [    0     0     0     0     0     0     0     0   937]]
+total right num: 38190.0
+oa: 0.8946727264208405
+aa: 0.8887318202730595
+kappa: 0.8621519995990607
+best model saved...
+best accuracy:0.894673
+step 6000, loss_cluster 0.023412 ,loss_classification 0.000066,loss_fusion 0.000065,loss_total 0.023542 lr 0.000939
+step 7000, loss_cluster 0.042101 ,loss_classification 0.000014,loss_fusion 0.000033,loss_total 0.042148 lr 0.000929
+step 8000, loss_cluster 0.010895 ,loss_classification 0.000003,loss_fusion 0.000001,loss_total 0.010899 lr 0.000919
+step 9000, loss_cluster 0.007822 ,loss_classification 0.000011,loss_fusion 0.000006,loss_total 0.007840 lr 0.000910
+step 10000, loss_cluster 0.000517 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000518 lr 0.000900
+4991 5000 0.9982
+9973 10000 0.9973
+14924 15000 0.9949333333333333
+19924 20000 0.9962
+24911 25000 0.99644
+29734 30000 0.9911333333333333
+34628 35000 0.9893714285714286
+38575 40000 0.964375
+41185 42686 0.9648362460759968
+test end!
+1 class: ( 6609.0 / 6621.0 ) 0.9981875849569551
+2 class: ( 18561.0 / 18639.0 ) 0.9958152261387413
+3 class: ( 1952.0 / 2089.0 ) 0.9344183820009574
+4 class: ( 3013.0 / 3054.0 ) 0.9865749836280289
+5 class: ( 1335.0 / 1335.0 ) 1.0
+6 class: ( 4818.0 / 5019.0 ) 0.9599521817095039
+7 class: ( 1299.0 / 1320.0 ) 0.9840909090909091
+8 class: ( 2661.0 / 3672.0 ) 0.7246732026143791
+9 class: ( 937.0 / 937.0 ) 1.0
+confusion matrix:
+[[ 6609     0     0     0     0     0    20     0     0]
+ [    0 18561     0    40     0   172     0     0     0]
+ [    0     0  1952     0     0     0     0  1010     0]
+ [    0     6     0  3013     0    18     0     0     0]
+ [    0     0     0     0  1335     0     0     0     0]
+ [    2    23     0     0     0  4818     0     1     0]
+ [    0     6     0     1     0    11  1299     0     0]
+ [   10    43   137     0     0     0     1  2661     0]
+ [    0     0     0     0     0     0     0     0   937]]
+total right num: 41185.0
+oa: 0.9648362460759968
+aa: 0.9537458300154972
+kappa: 0.9533565540772628
+best model saved...
+best accuracy:0.964836
+step 11000, loss_cluster 0.000264 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000264 lr 0.000891
+step 12000, loss_cluster 0.011954 ,loss_classification 0.000014,loss_fusion 0.000014,loss_total 0.011982 lr 0.000881
+step 13000, loss_cluster 0.000913 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000914 lr 0.000872
+step 14000, loss_cluster 0.013507 ,loss_classification 0.000001,loss_fusion 0.000001,loss_total 0.013509 lr 0.000863
+step 15000, loss_cluster 0.006051 ,loss_classification 0.000001,loss_fusion 0.000001,loss_total 0.006053 lr 0.000854
+4856 5000 0.9712
+9714 10000 0.9714
+12304 15000 0.8202666666666667
+13534 20000 0.6767
+15890 25000 0.6356
+20770 30000 0.6923333333333334
+25770 35000 0.7362857142857143
+29918 40000 0.74795
+32381 42686 0.7585859532399382
+test end!
+1 class: ( 6470.0 / 6621.0 ) 0.9771937773750189
+2 class: ( 9562.0 / 18639.0 ) 0.5130103546327592
+3 class: ( 2087.0 / 2089.0 ) 0.9990426041168023
+4 class: ( 3054.0 / 3054.0 ) 1.0
+5 class: ( 1335.0 / 1335.0 ) 1.0
+6 class: ( 5019.0 / 5019.0 ) 1.0
+7 class: ( 1312.0 / 1320.0 ) 0.9939393939393939
+8 class: ( 2605.0 / 3672.0 ) 0.7094226579520697
+9 class: ( 937.0 / 937.0 ) 1.0
+confusion matrix:
+[[6470    0    1    0    0    0    8   21    0]
+ [   0 9562    0    0    0    0    0    0    0]
+ [ 130    0 2087    0    0    0    0 1025    0]
+ [   0 1979    0 3054    0    0    0    0    0]
+ [   2    0    0    0 1335    0    0    0    0]
+ [  12 7095    0    0    0 5019    0   21    0]
+ [   3    0    0    0    0    0 1312    0    0]
+ [   0    3    1    0    0    0    0 2605    0]
+ [   4    0    0    0    0    0    0    0  937]]
+total right num: 32381.0
+oa: 0.7585859532399382
+aa: 0.9102898653351161
+kappa: 0.7074765783761165
+best accuracy:0.964836
+step 16000, loss_cluster 0.000239 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000239 lr 0.000845
+step 17000, loss_cluster 0.000066 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000067 lr 0.000836
+step 18000, loss_cluster 0.001095 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.001095 lr 0.000827
+step 19000, loss_cluster 0.000493 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000493 lr 0.000819
+step 20000, loss_cluster 0.000359 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000359 lr 0.000810
+4989 5000 0.9978
+9979 10000 0.9979
+14976 15000 0.9984
+19976 20000 0.9988
+24976 25000 0.99904
+29908 30000 0.9969333333333333
+34669 35000 0.9905428571428572
+38822 40000 0.97055
+41476 42686 0.971653469521623
+test end!
+1 class: ( 6601.0 / 6621.0 ) 0.9969793082615919
+2 class: ( 18635.0 / 18639.0 ) 0.9997853962122432
+3 class: ( 2085.0 / 2089.0 ) 0.9980852082336046
+4 class: ( 2982.0 / 3054.0 ) 0.9764243614931237
+5 class: ( 1335.0 / 1335.0 ) 1.0
+6 class: ( 4690.0 / 5019.0 ) 0.9344490934449093
+7 class: ( 1317.0 / 1320.0 ) 0.9977272727272727
+8 class: ( 2894.0 / 3672.0 ) 0.7881263616557734
+9 class: ( 937.0 / 937.0 ) 1.0
+confusion matrix:
+[[ 6601     0     0     0     0     0     0     0     0]
+ [    0 18635     0    60     0   308     0     0     0]
+ [    4     0  2085     0     0     0     0   778     0]
+ [    0     0     0  2982     0     1     0     0     0]
+ [    0     0     0     0  1335     0     0     0     0]
+ [    2     3     0     0     0  4690     0     0     0]
+ [    3     0     0     0     0     0  1317     0     0]
+ [   11     1     4     0     0    20     3  2894     0]
+ [    0     0     0    12     0     0     0     0   937]]
+total right num: 41476.0
+oa: 0.971653469521623
+aa: 0.9657307780031688
+kappa: 0.962308723213576
+best model saved...
+best accuracy:0.971653
+step 21000, loss_cluster 0.000951 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000951 lr 0.000802
+step 22000, loss_cluster 0.000088 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000088 lr 0.000793
+step 23000, loss_cluster 0.002221 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.002221 lr 0.000785
+step 24000, loss_cluster 0.000737 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000737 lr 0.000777
+step 25000, loss_cluster 0.045093 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.045093 lr 0.000768
+4983 5000 0.9966
+9963 10000 0.9963
+14960 15000 0.9973333333333333
+19960 20000 0.998
+24952 25000 0.99808
+29947 30000 0.9982333333333333
+34714 35000 0.9918285714285714
+39042 40000 0.97605
+41721 42686 0.9773930562713771
+test end!
+1 class: ( 6594.0 / 6621.0 ) 0.995922066153149
+2 class: ( 18618.0 / 18639.0 ) 0.9988733301142765
+3 class: ( 2085.0 / 2089.0 ) 0.9980852082336046
+4 class: ( 3053.0 / 3054.0 ) 0.9996725605762934
+5 class: ( 1335.0 / 1335.0 ) 1.0
+6 class: ( 4493.0 / 5019.0 ) 0.8951982466626818
+7 class: ( 1301.0 / 1320.0 ) 0.9856060606060606
+8 class: ( 3305.0 / 3672.0 ) 0.9000544662309368
+9 class: ( 937.0 / 937.0 ) 1.0
+confusion matrix:
+[[ 6594     0     0     0     0    20     9     0     0]
+ [    0 18618     0     1     0   493     0     0     0]
+ [    8     0  2085     0     0     0     0   359     0]
+ [    0     3     0  3053     0     0     0     0     0]
+ [    0     2     0     0  1335     0     0     0     0]
+ [    1     4     0     0     0  4493     0     0     0]
+ [    0     0     0     0     0     0  1301     8     0]
+ [   18    12     4     0     0    12     9  3305     0]
+ [    0     0     0     0     0     1     1     0   937]]
+total right num: 41721.0
+oa: 0.9773930562713771
+aa: 0.974823548730778
+kappa: 0.969894483611018
+best model saved...
+best accuracy:0.977393
+step 26000, loss_cluster 0.000275 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000275 lr 0.000760
+step 27000, loss_cluster 0.017271 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.017272 lr 0.000752
+step 28000, loss_cluster 0.000127 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000127 lr 0.000745
+step 29000, loss_cluster 0.000212 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000212 lr 0.000737
+step 30000, loss_cluster 0.000439 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000439 lr 0.000729
+4999 5000 0.9998
+9998 10000 0.9998
+14939 15000 0.9959333333333333
+19901 20000 0.99505
+24848 25000 0.99392
+29847 30000 0.9949
+34847 35000 0.9956285714285714
+38818 40000 0.97045
+41392 42686 0.9696856112074216
+test end!
+1 class: ( 6620.0 / 6621.0 ) 0.9998489654130795
+2 class: ( 18487.0 / 18639.0 ) 0.9918450560652395
+3 class: ( 2089.0 / 2089.0 ) 1.0
+4 class: ( 3054.0 / 3054.0 ) 1.0
+5 class: ( 1335.0 / 1335.0 ) 1.0
+6 class: ( 5019.0 / 5019.0 ) 1.0
+7 class: ( 1314.0 / 1320.0 ) 0.9954545454545455
+8 class: ( 2537.0 / 3672.0 ) 0.6909041394335512
+9 class: ( 937.0 / 937.0 ) 1.0
+confusion matrix:
+[[ 6620     0     0     0     0     0     0     0     0]
+ [    0 18487     0     0     0     0     0     0     0]
+ [    1     0  2089     0     0     0     0  1135     0]
+ [    0    10     0  3054     0     0     0     0     0]
+ [    0     0     0     0  1335     0     0     0     0]
+ [    0   137     0     0     0  5019     1     0     0]
+ [    0     0     0     0     0     0  1314     0     0]
+ [    0     5     0     0     0     0     5  2537     0]
+ [    0     0     0     0     0     0     0     0   937]]
+total right num: 41392.0
+oa: 0.9696856112074216
+aa: 0.9642280784851572
+kappa: 0.959914875911596
+best accuracy:0.977393
+step 31000, loss_cluster 0.000368 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000368 lr 0.000721
+step 32000, loss_cluster 0.000059 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000059 lr 0.000714
+step 33000, loss_cluster 0.000062 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000062 lr 0.000706
+step 34000, loss_cluster 0.000020 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000020 lr 0.000699
+step 35000, loss_cluster 0.000029 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000029 lr 0.000692
+4994 5000 0.9988
+9959 10000 0.9959
+14926 15000 0.9950666666666667
+19926 20000 0.9963
+24918 25000 0.99672
+29912 30000 0.9970666666666667
+34912 35000 0.9974857142857143
+39171 40000 0.979275
+41834 42686 0.9800402942416717
+test end!
+1 class: ( 6606.0 / 6621.0 ) 0.9977344811961939
+2 class: ( 18571.0 / 18639.0 ) 0.9963517356081335
+3 class: ( 2084.0 / 2089.0 ) 0.9976065102920058
+4 class: ( 3054.0 / 3054.0 ) 1.0
+5 class: ( 1335.0 / 1335.0 ) 1.0
+6 class: ( 5019.0 / 5019.0 ) 1.0
+7 class: ( 1316.0 / 1320.0 ) 0.996969696969697
+8 class: ( 2913.0 / 3672.0 ) 0.7933006535947712
+9 class: ( 936.0 / 937.0 ) 0.9989327641408752
+confusion matrix:
+[[ 6606     0     0     0     0     0     2     1     1]
+ [    0 18571     0     0     0     0     0     0     0]
+ [    0     2  2084     0     0     0     0   757     0]
+ [    0     0     0  3054     0     0     0     0     0]
+ [    0     3     0     0  1335     0     0     0     0]
+ [    4    60     0     0     0  5019     1     1     0]
+ [    4     0     0     0     0     0  1316     0     0]
+ [    7     1     5     0     0     0     1  2913     0]
+ [    0     2     0     0     0     0     0     0   936]]
+total right num: 41834.0
+oa: 0.9800402942416717
+aa: 0.9756550935335196
+kappa: 0.9735740696784885
+best model saved...
+best accuracy:0.980040
+step 36000, loss_cluster 0.000098 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000098 lr 0.000684
+step 37000, loss_cluster 0.000016 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000016 lr 0.000677
+step 38000, loss_cluster 0.000173 ,loss_classification 0.000002,loss_fusion 0.000000,loss_total 0.000175 lr 0.000670
+step 39000, loss_cluster 0.000037 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000037 lr 0.000663
+step 40000, loss_cluster 0.002106 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.002106 lr 0.000656
+4999 5000 0.9998
+9994 10000 0.9994
+14984 15000 0.9989333333333333
+19976 20000 0.9988
+24968 25000 0.99872
+29950 30000 0.9983333333333333
+34762 35000 0.9932
+39529 40000 0.988225
+42203 42686 0.9886848146933421
+test end!
+1 class: ( 6620.0 / 6621.0 ) 0.9998489654130795
+2 class: ( 18608.0 / 18639.0 ) 0.9983368206448844
+3 class: ( 2089.0 / 2089.0 ) 1.0
+4 class: ( 3036.0 / 3054.0 ) 0.9941060903732809
+5 class: ( 1335.0 / 1335.0 ) 1.0
+6 class: ( 4701.0 / 5019.0 ) 0.9366407650926479
+7 class: ( 1317.0 / 1320.0 ) 0.9977272727272727
+8 class: ( 3560.0 / 3672.0 ) 0.9694989106753813
+9 class: ( 937.0 / 937.0 ) 1.0
+confusion matrix:
+[[ 6620     0     0     0     0    22     1     0     0]
+ [    0 18608     0     0     0   246     0     0     0]
+ [    0     1  2089     0     0    41     0    84     0]
+ [    0    23     0  3036     0     0     0     0     0]
+ [    0     0     0     0  1335     7     0     0     0]
+ [    1     7     0     0     0  4701     2     0     0]
+ [    0     0     0     0     0     0  1317    28     0]
+ [    0     0     0     0     0     0     0  3560     0]
+ [    0     0     0    18     0     2     0     0   937]]
+total right num: 42203.0
+oa: 0.9886848146933421
+aa: 0.9884620916585052
+kappa: 0.9849677650135389
+best model saved...
+best accuracy:0.988685
+step 41000, loss_cluster 0.000049 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000049 lr 0.000649
+step 42000, loss_cluster 0.000012 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000012 lr 0.000642
+step 43000, loss_cluster 0.000142 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000142 lr 0.000636
+step 44000, loss_cluster 0.000012 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000012 lr 0.000629
+step 45000, loss_cluster 0.053863 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.053863 lr 0.000622
+4997 5000 0.9994
+9991 10000 0.9991
+14939 15000 0.9959333333333333
+19919 20000 0.99595
+24824 25000 0.99296
+29673 30000 0.9891
+34624 35000 0.9892571428571428
+39349 40000 0.983725
+42026 42686 0.9845382561027035
+test end!
+1 class: ( 6616.0 / 6621.0 ) 0.999244827065398
+2 class: ( 18460.0 / 18639.0 ) 0.9903964804978808
+3 class: ( 1946.0 / 2089.0 ) 0.9315461943513643
+4 class: ( 3054.0 / 3054.0 ) 1.0
+5 class: ( 1335.0 / 1335.0 ) 1.0
+6 class: ( 4908.0 / 5019.0 ) 0.9778840406455469
+7 class: ( 1314.0 / 1320.0 ) 0.9954545454545455
+8 class: ( 3456.0 / 3672.0 ) 0.9411764705882353
+9 class: ( 937.0 / 937.0 ) 1.0
+confusion matrix:
+[[ 6616     0     0     0     0     0     0     7     0]
+ [    0 18460     0     0     0   102     0     0     0]
+ [    2     0  1946     0     0     0     0   203     0]
+ [    0    92     0  3054     0     0     0     0     0]
+ [    0    16     0     0  1335     9     0     0     0]
+ [    3    69     0     0     0  4908     0     6     0]
+ [    0     0     0     0     0     0  1314     0     0]
+ [    0     2   143     0     0     0     6  3456     0]
+ [    0     0     0     0     0     0     0     0   937]]
+total right num: 42026.0
+oa: 0.9845382561027035
+aa: 0.9817447287336635
+kappa: 0.9795176852531933
+best accuracy:0.988685
+step 46000, loss_cluster 0.000007 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000007 lr 0.000616
+step 47000, loss_cluster 0.000144 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000144 lr 0.000609
+step 48000, loss_cluster 0.000004 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000004 lr 0.000603
+step 49000, loss_cluster 0.000015 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000015 lr 0.000597
+step 50000, loss_cluster 0.000642 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000642 lr 0.000590
+4995 5000 0.999
+9930 10000 0.993
+14334 15000 0.9556
+18885 20000 0.94425
+23672 25000 0.94688
+28649 30000 0.9549666666666666
+33641 35000 0.9611714285714286
+38500 40000 0.9625
+41182 42686 0.9647659654219182
+test end!
+1 class: ( 6580.0 / 6621.0 ) 0.9938075819362634
+2 class: ( 17329.0 / 18639.0 ) 0.9297172595096304
+3 class: ( 2089.0 / 2089.0 ) 1.0
+4 class: ( 3054.0 / 3054.0 ) 1.0
+5 class: ( 1335.0 / 1335.0 ) 1.0
+6 class: ( 5007.0 / 5019.0 ) 0.9976090854751942
+7 class: ( 1320.0 / 1320.0 ) 1.0
+8 class: ( 3531.0 / 3672.0 ) 0.9616013071895425
+9 class: ( 937.0 / 937.0 ) 1.0
+confusion matrix:
+[[ 6580     0     0     0     0     0     0     0     0]
+ [    0 17329     0     0     0     0     0     0     0]
+ [    0     1  2089     0     0     0     0   140     0]
+ [    0    56     0  3054     0     0     0     0     0]
+ [    0     0     0     0  1335     0     0     0     0]
+ [    0  1125     0     0     0  5007     0     0     0]
+ [    0     0     0     0     0     0  1320     1     0]
+ [   41   128     0     0     0    12     0  3531     0]
+ [    0     0     0     0     0     0     0     0   937]]
+total right num: 41182.0
+oa: 0.9647659654219182
+aa: 0.9869705815678478
+kappa: 0.953898235977831
+best accuracy:0.988685
+step 51000, loss_cluster 0.000244 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000244 lr 0.000584
+step 52000, loss_cluster 0.000207 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000207 lr 0.000578
+step 53000, loss_cluster 0.000043 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000043 lr 0.000572
+step 54000, loss_cluster 0.000022 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000022 lr 0.000566
+step 55000, loss_cluster 0.000004 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000004 lr 0.000560
+4999 5000 0.9998
+9999 10000 0.9999
+14999 15000 0.9999333333333333
+19999 20000 0.99995
+24999 25000 0.99996
+29998 30000 0.9999333333333333
+34998 35000 0.9999428571428571
+39885 40000 0.997125
+42571 42686 0.9973059082603195
+test end!
+1 class: ( 6620.0 / 6621.0 ) 0.9998489654130795
+2 class: ( 18638.0 / 18639.0 ) 0.9999463490530608
+3 class: ( 2089.0 / 2089.0 ) 1.0
+4 class: ( 3054.0 / 3054.0 ) 1.0
+5 class: ( 1335.0 / 1335.0 ) 1.0
+6 class: ( 5019.0 / 5019.0 ) 1.0
+7 class: ( 1318.0 / 1320.0 ) 0.9984848484848485
+8 class: ( 3561.0 / 3672.0 ) 0.9697712418300654
+9 class: ( 937.0 / 937.0 ) 1.0
+confusion matrix:
+[[ 6620     0     0     0     0     0     0     0     0]
+ [    0 18638     0     0     0     0     0     0     0]
+ [    0     0  2089     0     0     0     0   109     0]
+ [    0     0     0  3054     0     0     0     0     0]
+ [    0     0     0     0  1335     0     0     0     0]
+ [    0     1     0     0     0  5019     1     0     0]
+ [    1     0     0     0     0     0  1318     2     0]
+ [    0     0     0     0     0     0     1  3561     0]
+ [    0     0     0     0     0     0     0     0   937]]
+total right num: 42571.0
+oa: 0.9973059082603195
+aa: 0.9964501560867838
+kappa: 0.9964279949629802
+best model saved...
+best accuracy:0.997306
+step 56000, loss_cluster 0.000003 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000003 lr 0.000554
+step 57000, loss_cluster 0.000158 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000159 lr 0.000549
+step 58000, loss_cluster 0.000009 ,loss_classification 0.000000,loss_fusion 0.000001,loss_total 0.000010 lr 0.000543
+step 59000, loss_cluster 0.000089 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000089 lr 0.000537
+step 60000, loss_cluster 0.000917 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000917 lr 0.000531
+4978 5000 0.9956
+9908 10000 0.9908
+14825 15000 0.9883333333333333
+19785 20000 0.98925
+24744 25000 0.98976
+29739 30000 0.9913
+34739 35000 0.9925428571428572
+39460 40000 0.9865
+42115 42686 0.9866232488403692
+test end!
+1 class: ( 6530.0 / 6621.0 ) 0.9862558525902432
+2 class: ( 18469.0 / 18639.0 ) 0.9908793390203338
+3 class: ( 2089.0 / 2089.0 ) 1.0
+4 class: ( 3054.0 / 3054.0 ) 1.0
+5 class: ( 1335.0 / 1335.0 ) 1.0
+6 class: ( 5019.0 / 5019.0 ) 1.0
+7 class: ( 1320.0 / 1320.0 ) 1.0
+8 class: ( 3362.0 / 3672.0 ) 0.9155773420479303
+9 class: ( 937.0 / 937.0 ) 1.0
+confusion matrix:
+[[ 6530     0     0     0     0     0     0     0     0]
+ [    0 18469     0     0     0     0     0     0     0]
+ [    2     0  2089     0     0     0     0   308     0]
+ [    0    54     0  3054     0     0     0     0     0]
+ [    0     2     0     0  1335     0     0     0     0]
+ [    0   104     0     0     0  5019     0     0     0]
+ [    0     0     0     0     0     0  1320     2     0]
+ [   89     8     0     0     0     0     0  3362     0]
+ [    0     2     0     0     0     0     0     0   937]]
+total right num: 42115.0
+oa: 0.9866232488403692
+aa: 0.9880791704065008
+kappa: 0.9823031271444916
+best accuracy:0.997306
+step 61000, loss_cluster 0.000002 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000002 lr 0.000526
+step 62000, loss_cluster 0.000003 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000003 lr 0.000520
+step 63000, loss_cluster 0.000386 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000386 lr 0.000515
+step 64000, loss_cluster 0.000035 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000035 lr 0.000510
+step 65000, loss_cluster 0.000012 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000012 lr 0.000504
+4980 5000 0.996
+8137 10000 0.8137
+9576 15000 0.6384
+10594 20000 0.5297
+12244 25000 0.48976
+17027 30000 0.5675666666666667
+21401 35000 0.6114571428571428
+24454 40000 0.61135
+26495 42686 0.6206953099376845
+test end!
+1 class: ( 6476.0 / 6621.0 ) 0.9780999848965413
+2 class: ( 5840.0 / 18639.0 ) 0.3133215301250067
+3 class: ( 2060.0 / 2089.0 ) 0.9861177596936334
+4 class: ( 3054.0 / 3054.0 ) 1.0
+5 class: ( 1335.0 / 1335.0 ) 1.0
+6 class: ( 3993.0 / 5019.0 ) 0.7955768081291094
+7 class: ( 1173.0 / 1320.0 ) 0.8886363636363637
+8 class: ( 1627.0 / 3672.0 ) 0.44308278867102396
+9 class: ( 937.0 / 937.0 ) 1.0
+confusion matrix:
+[[6476   30   28    0    0   12  146  492    0]
+ [   0 5840    0    0    0    0    0    0    0]
+ [   2  382 2060    0    0    0    0 1327    0]
+ [   0  614    0 3054    0    0    0    0    0]
+ [   0    0    0    0 1335    0    0    0    0]
+ [   0 6749    0    0    0 3993    0    0    0]
+ [   6    0    0    0    0   17 1173  226    0]
+ [ 137 5024    1    0    0  997    1 1627    0]
+ [   0    0    0    0    0    0    0    0  937]]
+total right num: 26495.0
+oa: 0.6206953099376845
+aa: 0.8227594705724086
+kappa: 0.5568415016386574
+best accuracy:0.997306
+step 66000, loss_cluster 0.000003 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000003 lr 0.000499
+step 67000, loss_cluster 0.000002 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000002 lr 0.000494
+step 68000, loss_cluster 0.000012 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000012 lr 0.000488
+step 69000, loss_cluster 0.000003 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000003 lr 0.000483
+step 70000, loss_cluster 0.000309 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000309 lr 0.000478
+4940 5000 0.988
+9842 10000 0.9842
+14606 15000 0.9737333333333333
+19538 20000 0.9769
+24380 25000 0.9752
+29069 30000 0.9689666666666666
+33984 35000 0.9709714285714286
+37735 40000 0.943375
+39446 42686 0.9240968935950897
+test end!
+1 class: ( 6473.0 / 6621.0 ) 0.9776468811357801
+2 class: ( 18161.0 / 18639.0 ) 0.974354847363056
+3 class: ( 1795.0 / 2089.0 ) 0.8592628051699378
+4 class: ( 3043.0 / 3054.0 ) 0.9963981663392273
+5 class: ( 1335.0 / 1335.0 ) 1.0
+6 class: ( 4779.0 / 5019.0 ) 0.9521817095038853
+7 class: ( 1315.0 / 1320.0 ) 0.9962121212121212
+8 class: ( 1608.0 / 3672.0 ) 0.43790849673202614
+9 class: ( 937.0 / 937.0 ) 1.0
+confusion matrix:
+[[ 6473     0    95     0     0     0     2   132     0]
+ [    0 18161     9     0     0   187     0    64     0]
+ [   14     1  1795     1     0     1     0   468     0]
+ [    0    22     0  3043     0     1     0     1     0]
+ [    0     0     3     0  1335     4     0   154     0]
+ [  114   430    89     0     0  4779     0  1236     0]
+ [   18     0     0     0     0     0  1315     9     0]
+ [    2     8    98     0     0     0     3  1608     0]
+ [    0    17     0    10     0    47     0     0   937]]
+total right num: 39446.0
+oa: 0.9240968935950897
+aa: 0.9104405586062261
+kappa: 0.8994782351311251
+best accuracy:0.997306
+step 71000, loss_cluster 0.000020 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000020 lr 0.000473
+step 72000, loss_cluster 0.000001 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000001 lr 0.000468
+step 73000, loss_cluster 0.000001 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000001 lr 0.000463
+step 74000, loss_cluster 0.000005 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000005 lr 0.000459
+step 75000, loss_cluster 0.000114 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000114 lr 0.000454
+4991 5000 0.9982
+9972 10000 0.9972
+14949 15000 0.9966
+19835 20000 0.99175
+24796 25000 0.99184
+29795 30000 0.9931666666666666
+34795 35000 0.9941428571428571
+39616 40000 0.9904
+42301 42686 0.9909806493932437
+test end!
+1 class: ( 6609.0 / 6621.0 ) 0.9981875849569551
+2 class: ( 18446.0 / 18639.0 ) 0.9896453672407318
+3 class: ( 2089.0 / 2089.0 ) 1.0
+4 class: ( 3054.0 / 3054.0 ) 1.0
+5 class: ( 1335.0 / 1335.0 ) 1.0
+6 class: ( 5019.0 / 5019.0 ) 1.0
+7 class: ( 1317.0 / 1320.0 ) 0.9977272727272727
+8 class: ( 3495.0 / 3672.0 ) 0.951797385620915
+9 class: ( 937.0 / 937.0 ) 1.0
+confusion matrix:
+[[ 6609     0     0     0     0     0     0     0     0]
+ [    0 18446     0     0     0     0     0     0     0]
+ [    2     0  2089     0     0     0     0   173     0]
+ [    0     0     0  3054     0     0     0     0     0]
+ [    0     0     0     0  1335     0     0     0     0]
+ [    0   191     0     0     0  5019     0     0     0]
+ [    4     0     0     0     0     0  1317     4     0]
+ [    6     0     0     0     0     0     3  3495     0]
+ [    0     2     0     0     0     0     0     0   937]]
+total right num: 42301.0
+oa: 0.9909806493932437
+aa: 0.9930397345050971
+kappa: 0.988065611147455
+best accuracy:0.997306
+step 76000, loss_cluster 0.000006 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000006 lr 0.000449
+step 77000, loss_cluster 0.000006 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000006 lr 0.000444
+step 78000, loss_cluster 0.000001 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000001 lr 0.000440
+step 79000, loss_cluster 0.000002 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000002 lr 0.000435
+step 80000, loss_cluster 0.000004 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000004 lr 0.000430
+4999 5000 0.9998
+9998 10000 0.9998
+14989 15000 0.9992666666666666
+19988 20000 0.9994
+24954 25000 0.99816
+29950 30000 0.9983333333333333
+34935 35000 0.9981428571428571
+39587 40000 0.989675
+42218 42686 0.9890362179637352
+test end!
+1 class: ( 6620.0 / 6621.0 ) 0.9998489654130795
+2 class: ( 18591.0 / 18639.0 ) 0.9974247545469177
+3 class: ( 2089.0 / 2089.0 ) 1.0
+4 class: ( 3053.0 / 3054.0 ) 0.9996725605762934
+5 class: ( 1335.0 / 1335.0 ) 1.0
+6 class: ( 4963.0 / 5019.0 ) 0.9888423988842399
+7 class: ( 1319.0 / 1320.0 ) 0.9992424242424243
+8 class: ( 3311.0 / 3672.0 ) 0.9016884531590414
+9 class: ( 937.0 / 937.0 ) 1.0
+confusion matrix:
+[[ 6620     0     0     0     0     0     0     1     0]
+ [    0 18591     0     0     0    55     0     1     0]
+ [    1     0  2089     1     0     0     0   321     0]
+ [    0     0     0  3053     0     0     0     0     0]
+ [    0     0     0     0  1335     0     0     0     0]
+ [    0    27     0     0     0  4963     0    38     0]
+ [    0     0     0     0     0     0  1319     0     0]
+ [    0     0     0     0     0     0     1  3311     0]
+ [    0    21     0     0     0     1     0     0   937]]
+total right num: 42218.0
+oa: 0.9890362179637352
+aa: 0.9874132840913329
+kappa: 0.9854660997726332
+best accuracy:0.997306
+step 81000, loss_cluster 0.000003 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000003 lr 0.000426
+step 82000, loss_cluster 0.000005 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000005 lr 0.000421
+step 83000, loss_cluster 0.000015 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000015 lr 0.000417
+step 84000, loss_cluster 0.000001 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000001 lr 0.000413
+step 85000, loss_cluster 0.000024 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000024 lr 0.000408
+4956 5000 0.9912
+8129 10000 0.8129
+8867 15000 0.5911333333333333
+9196 20000 0.4598
+9797 25000 0.39188
+14333 30000 0.4777666666666667
+18816 35000 0.5376
+22906 40000 0.57265
+25481 42686 0.5969404488591107
+test end!
+1 class: ( 6429.0 / 6621.0 ) 0.9710013593112823
+2 class: ( 3392.0 / 18639.0 ) 0.1819840120178121
+3 class: ( 1862.0 / 2089.0 ) 0.8913355672570608
+4 class: ( 3053.0 / 3054.0 ) 0.9996725605762934
+5 class: ( 1335.0 / 1335.0 ) 1.0
+6 class: ( 4189.0 / 5019.0 ) 0.8346284120342697
+7 class: ( 1314.0 / 1320.0 ) 0.9954545454545455
+8 class: ( 2970.0 / 3672.0 ) 0.8088235294117647
+9 class: ( 937.0 / 937.0 ) 1.0
+confusion matrix:
+[[6429    2   14    0    0    1    5  108    0]
+ [   0 3392    0    0    0    0    0    0    0]
+ [   0  738 1862    1    0    4    0  573    0]
+ [   0 3148    0 3053    0    0    0    0    0]
+ [   0    0    0    0 1335    0    0    0    0]
+ [   0 6675    0    0    0 4189    0    0    0]
+ [  50    0    0    0    0   22 1314   21    0]
+ [ 142 4684  213    0    0  803    1 2970    0]
+ [   0    0    0    0    0    0    0    0  937]]
+total right num: 25481.0
+oa: 0.5969404488591107
+aa: 0.8536555540070032
+kappa: 0.5405504853866452
+best accuracy:0.997306
+step 86000, loss_cluster 0.000002 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000002 lr 0.000404
+step 87000, loss_cluster 0.000002 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000002 lr 0.000400
+step 88000, loss_cluster 0.000005 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000005 lr 0.000396
+step 89000, loss_cluster 0.000011 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000011 lr 0.000392
+step 90000, loss_cluster 0.000016 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000016 lr 0.000387
+4998 5000 0.9996
+9998 10000 0.9998
+14998 15000 0.9998666666666667
+19996 20000 0.9998
+24995 25000 0.9998
+29992 30000 0.9997333333333334
+34991 35000 0.9997428571428572
+39898 40000 0.99745
+42583 42686 0.997587030876634
+test end!
+1 class: ( 6619.0 / 6621.0 ) 0.9996979308261592
+2 class: ( 18636.0 / 18639.0 ) 0.9998390471591824
+3 class: ( 2089.0 / 2089.0 ) 1.0
+4 class: ( 3051.0 / 3054.0 ) 0.9990176817288802
+5 class: ( 1335.0 / 1335.0 ) 1.0
+6 class: ( 5018.0 / 5019.0 ) 0.9998007571229328
+7 class: ( 1319.0 / 1320.0 ) 0.9992424242424243
+8 class: ( 3579.0 / 3672.0 ) 0.9746732026143791
+9 class: ( 937.0 / 937.0 ) 1.0
+confusion matrix:
+[[ 6619     0     0     0     0     0     0     0     0]
+ [    0 18636     0     1     0     1     0     0     0]
+ [    0     0  2089     0     0     0     0    91     0]
+ [    0     0     0  3051     0     0     0     0     0]
+ [    0     0     0     0  1335     0     0     0     0]
+ [    0     3     0     0     0  5018     0     1     0]
+ [    2     0     0     0     0     0  1319     1     0]
+ [    0     0     0     0     0     0     1  3579     0]
+ [    0     0     0     2     0     0     0     0   937]]
+total right num: 42583.0
+oa: 0.997587030876634
+aa: 0.9969190048548842
+kappa: 0.9968006772118615
+best model saved...
+best accuracy:0.997587
+step 91000, loss_cluster 0.000002 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000002 lr 0.000383
+step 92000, loss_cluster 0.000013 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000013 lr 0.000379
+step 93000, loss_cluster 0.000001 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000001 lr 0.000375
+step 94000, loss_cluster 0.000001 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000001 lr 0.000371
+step 95000, loss_cluster 0.000001 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000001 lr 0.000368
+5000 5000 1.0
+9998 10000 0.9998
+14978 15000 0.9985333333333334
+19973 20000 0.99865
+24955 25000 0.9982
+29953 30000 0.9984333333333333
+34953 35000 0.9986571428571429
+39877 40000 0.996925
+42561 42686 0.9970716394133908
+test end!
+1 class: ( 6621.0 / 6621.0 ) 1.0
+2 class: ( 18592.0 / 18639.0 ) 0.9974784054938569
+3 class: ( 2089.0 / 2089.0 ) 1.0
+4 class: ( 3054.0 / 3054.0 ) 1.0
+5 class: ( 1335.0 / 1335.0 ) 1.0
+6 class: ( 5019.0 / 5019.0 ) 1.0
+7 class: ( 1320.0 / 1320.0 ) 1.0
+8 class: ( 3594.0 / 3672.0 ) 0.9787581699346405
+9 class: ( 937.0 / 937.0 ) 1.0
+confusion matrix:
+[[ 6621     0     0     0     0     0     0     0     0]
+ [    0 18592     0     0     0     0     0     0     0]
+ [    0     0  2089     0     0     0     0    49     0]
+ [    0     2     0  3054     0     0     0     0     0]
+ [    0     1     0     0  1335     0     0     0     0]
+ [    0    38     0     0     0  5019     0     0     0]
+ [    0     0     0     0     0     0  1320    29     0]
+ [    0     0     0     0     0     0     0  3594     0]
+ [    0     6     0     0     0     0     0     0   937]]
+total right num: 42561.0
+oa: 0.9970716394133908
+aa: 0.9973596194920553
+kappa: 0.9961191589777799
+best accuracy:0.997587
+step 96000, loss_cluster 0.000001 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000001 lr 0.000364
+step 97000, loss_cluster 0.000001 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000001 lr 0.000360
+step 98000, loss_cluster 0.000000 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000000 lr 0.000356
+step 99000, loss_cluster 0.000001 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000001 lr 0.000352
+step 100000, loss_cluster 0.000464 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000464 lr 0.000349
+4994 5000 0.9988
+9974 10000 0.9974
+14963 15000 0.9975333333333334
+19961 20000 0.99805
+24961 25000 0.99844
+29960 30000 0.9986666666666667
+34960 35000 0.9988571428571429
+39646 40000 0.99115
+42330 42686 0.991660029049337
+test end!
+1 class: ( 6595.0 / 6621.0 ) 0.9960731007400695
+2 class: ( 18625.0 / 18639.0 ) 0.9992488867428511
+3 class: ( 2089.0 / 2089.0 ) 1.0
+4 class: ( 3054.0 / 3054.0 ) 1.0
+5 class: ( 1335.0 / 1335.0 ) 1.0
+6 class: ( 5019.0 / 5019.0 ) 1.0
+7 class: ( 1319.0 / 1320.0 ) 0.9992424242424243
+8 class: ( 3357.0 / 3672.0 ) 0.9142156862745098
+9 class: ( 937.0 / 937.0 ) 1.0
+confusion matrix:
+[[ 6595     0     0     0     0     0     0     0     0]
+ [    0 18625     0     0     0     0     0     0     0]
+ [    0     0  2089     0     0     0     0   240     0]
+ [    0     0     0  3054     0     0     0     0     0]
+ [    0     0     0     0  1335     0     0     0     0]
+ [    0    14     0     0     0  5019     0     0     0]
+ [    1     0     0     0     0     0  1319    75     0]
+ [   25     0     0     0     0     0     1  3357     0]
+ [    0     0     0     0     0     0     0     0   937]]
+total right num: 42330.0
+oa: 0.991660029049337
+aa: 0.9898644553333172
+kappa: 0.9889474102123891
+best accuracy:0.997587
+step 101000, loss_cluster 0.000001 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000001 lr 0.000345
+step 102000, loss_cluster 0.000003 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000003 lr 0.000341
+step 103000, loss_cluster 0.000017 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000017 lr 0.000338
+step 104000, loss_cluster 0.000001 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000001 lr 0.000334
+step 105000, loss_cluster 0.000000 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000000 lr 0.000331
+5000 5000 1.0
+10000 10000 1.0
+14990 15000 0.9993333333333333
+19984 20000 0.9992
+24972 25000 0.99888
+29970 30000 0.999
+34970 35000 0.9991428571428571
+39570 40000 0.98925
+42256 42686 0.9899264395820644
+test end!
+1 class: ( 6621.0 / 6621.0 ) 1.0
+2 class: ( 18609.0 / 18639.0 ) 0.9983904715918236
+3 class: ( 2089.0 / 2089.0 ) 1.0
+4 class: ( 3054.0 / 3054.0 ) 1.0
+5 class: ( 1335.0 / 1335.0 ) 1.0
+6 class: ( 5019.0 / 5019.0 ) 1.0
+7 class: ( 1319.0 / 1320.0 ) 0.9992424242424243
+8 class: ( 3273.0 / 3672.0 ) 0.8913398692810458
+9 class: ( 937.0 / 937.0 ) 1.0
+confusion matrix:
+[[ 6621     0     0     0     0     0     0     0     0]
+ [    0 18609     0     0     0     0     0     0     0]
+ [    0     0  2089     0     0     0     0   175     0]
+ [    0     0     0  3054     0     0     0     0     0]
+ [    0     1     0     0  1335     0     0     0     0]
+ [    0    24     0     0     0  5019     0     0     0]
+ [    0     0     0     0     0     0  1319   224     0]
+ [    0     0     0     0     0     0     1  3273     0]
+ [    0     5     0     0     0     0     0     0   937]]
+total right num: 42256.0
+oa: 0.9899264395820644
+aa: 0.9876636405683661
+kappa: 0.9866539468619703
+best accuracy:0.997587
+step 106000, loss_cluster 0.000010 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000010 lr 0.000327
+step 107000, loss_cluster 0.000006 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000006 lr 0.000324
+step 108000, loss_cluster 0.000014 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000014 lr 0.000320
+step 109000, loss_cluster 0.000000 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000000 lr 0.000317
+step 110000, loss_cluster 0.000004 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000004 lr 0.000314
+4997 5000 0.9994
+9996 10000 0.9996
+14979 15000 0.9986
+19974 20000 0.9987
+24960 25000 0.9984
+29959 30000 0.9986333333333334
+34959 35000 0.9988285714285714
+39675 40000 0.991875
+42360 42686 0.9923628355901232
+test end!
+1 class: ( 6618.0 / 6621.0 ) 0.9995468962392388
+2 class: ( 18601.0 / 18639.0 ) 0.9979612640163099
+3 class: ( 2089.0 / 2089.0 ) 1.0
+4 class: ( 3054.0 / 3054.0 ) 1.0
+5 class: ( 1335.0 / 1335.0 ) 1.0
+6 class: ( 5019.0 / 5019.0 ) 1.0
+7 class: ( 1319.0 / 1320.0 ) 0.9992424242424243
+8 class: ( 3388.0 / 3672.0 ) 0.9226579520697168
+9 class: ( 937.0 / 937.0 ) 1.0
+confusion matrix:
+[[ 6618     0     0     0     0     0     0     0     0]
+ [    0 18601     0     0     0     0     0     0     0]
+ [    1     0  2089     0     0     0     0   266     0]
+ [    0     0     0  3054     0     0     0     0     0]
+ [    0     0     0     0  1335     0     0     0     0]
+ [    0    29     0     0     0  5019     0     0     0]
+ [    2     0     0     0     0     0  1319    18     0]
+ [    0     0     0     0     0     0     1  3388     0]
+ [    0     9     0     0     0     0     0     0   937]]
+total right num: 42360.0
+oa: 0.9923628355901232
+aa: 0.9910453929519656
+kappa: 0.989880330483367
+best accuracy:0.997587
+step 111000, loss_cluster 0.000005 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000005 lr 0.000311
+step 112000, loss_cluster 0.000001 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000001 lr 0.000307
+step 113000, loss_cluster 0.000059 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000059 lr 0.000304
+step 114000, loss_cluster 0.000001 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000001 lr 0.000301
+step 115000, loss_cluster 0.000000 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000000 lr 0.000298
+4999 5000 0.9998
+9999 10000 0.9999
+14998 15000 0.9998666666666667
+19998 20000 0.9999
+24998 25000 0.99992
+29998 30000 0.9999333333333333
+34998 35000 0.9999428571428571
+39914 40000 0.99785
+42596 42686 0.9978915803776414
+test end!
+1 class: ( 6620.0 / 6621.0 ) 0.9998489654130795
+2 class: ( 18638.0 / 18639.0 ) 0.9999463490530608
+3 class: ( 2089.0 / 2089.0 ) 1.0
+4 class: ( 3054.0 / 3054.0 ) 1.0
+5 class: ( 1335.0 / 1335.0 ) 1.0
+6 class: ( 5019.0 / 5019.0 ) 1.0
+7 class: ( 1318.0 / 1320.0 ) 0.9984848484848485
+8 class: ( 3586.0 / 3672.0 ) 0.9765795206971678
+9 class: ( 937.0 / 937.0 ) 1.0
+confusion matrix:
+[[ 6620     0     0     0     0     0     0     0     0]
+ [    0 18638     0     0     0     0     0     0     0]
+ [    0     0  2089     0     0     0     0    74     0]
+ [    0     0     0  3054     0     0     0     0     0]
+ [    0     0     0     0  1335     0     0     0     0]
+ [    0     0     0     0     0  5019     0     0     0]
+ [    1     0     0     0     0     0  1318    12     0]
+ [    0     0     0     0     0     0     2  3586     0]
+ [    0     1     0     0     0     0     0     0   937]]
+total right num: 42596.0
+oa: 0.9978915803776414
+aa: 0.9972066315164619
+kappa: 0.9972044639802944
+best model saved...
+best accuracy:0.997892
+step 116000, loss_cluster 0.000004 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000004 lr 0.000295
+step 117000, loss_cluster 0.000001 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000001 lr 0.000292
+step 118000, loss_cluster 0.000002 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000002 lr 0.000288
+step 119000, loss_cluster 0.000000 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000000 lr 0.000285
+step 120000, loss_cluster 0.000006 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000006 lr 0.000282
+4886 5000 0.9772
+9666 10000 0.9666
+13892 15000 0.9261333333333334
+18468 20000 0.9234
+22583 25000 0.90332
+26021 30000 0.8673666666666666
+30342 35000 0.8669142857142857
+33641 40000 0.841025
+35319 42686 0.8274141404676006
+test end!
+1 class: ( 6414.0 / 6621.0 ) 0.9687358405074762
+2 class: ( 16400.0 / 18639.0 ) 0.879875529803101
+3 class: ( 556.0 / 2089.0 ) 0.2661560555289612
+4 class: ( 3054.0 / 3054.0 ) 1.0
+5 class: ( 1335.0 / 1335.0 ) 1.0
+6 class: ( 3941.0 / 5019.0 ) 0.7852161785216178
+7 class: ( 1311.0 / 1320.0 ) 0.9931818181818182
+8 class: ( 1371.0 / 3672.0 ) 0.37336601307189543
+9 class: ( 937.0 / 937.0 ) 1.0
+confusion matrix:
+[[ 6414     0     0     0     0     0     4     4     0]
+ [   10 16400  1019     0     0  1008     0   642     0]
+ [   40     0   556     0     0     0     0    35     0]
+ [    0  1964     0  3054     0     4     0     0     0]
+ [    1    96   123     0  1335    63     0   450     0]
+ [  117   179   156     0     0  3941     1  1170     0]
+ [   36     0     0     0     0     3  1311     0     0]
+ [    3     0   235     0     0     0     4  1371     0]
+ [    0     0     0     0     0     0     0     0   937]]
+total right num: 35319.0
+oa: 0.8274141404676006
+aa: 0.8073923817349855
+kappa: 0.7701320053783223
+best accuracy:0.997892
+step 121000, loss_cluster 0.000001 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000001 lr 0.000279
+step 122000, loss_cluster 0.000000 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000000 lr 0.000277
+step 123000, loss_cluster 0.000000 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000000 lr 0.000274
+step 124000, loss_cluster 0.000000 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000000 lr 0.000271
+step 125000, loss_cluster 0.000001 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000001 lr 0.000268
+4995 5000 0.999
+9993 10000 0.9993
+14993 15000 0.9995333333333334
+19989 20000 0.99945
+24988 25000 0.99952
+29984 30000 0.9994666666666666
+34984 35000 0.9995428571428572
+39827 40000 0.995675
+42513 42686 0.9959471489481329
+test end!
+1 class: ( 6615.0 / 6621.0 ) 0.9990937924784775
+2 class: ( 18632.0 / 18639.0 ) 0.9996244433714255
+3 class: ( 2086.0 / 2089.0 ) 0.9985639061752034
+4 class: ( 3054.0 / 3054.0 ) 1.0
+5 class: ( 1335.0 / 1335.0 ) 1.0
+6 class: ( 5019.0 / 5019.0 ) 1.0
+7 class: ( 1317.0 / 1320.0 ) 0.9977272727272727
+8 class: ( 3518.0 / 3672.0 ) 0.9580610021786492
+9 class: ( 937.0 / 937.0 ) 1.0
+confusion matrix:
+[[ 6615     0     0     0     0     0     0     0     0]
+ [    0 18632     0     0     0     0     0     0     0]
+ [    4     0  2086     0     0     0     0   152     0]
+ [    0     5     0  3054     0     0     0     0     0]
+ [    0     0     0     0  1335     0     0     0     0]
+ [    0     1     0     0     0  5019     0     0     0]
+ [    1     0     0     0     0     0  1317     2     0]
+ [    1     0     3     0     0     0     3  3518     0]
+ [    0     1     0     0     0     0     0     0   937]]
+total right num: 42513.0
+oa: 0.9959471489481329
+aa: 0.9947856018812254
+kappa: 0.9946271618807793
+best accuracy:0.997892
+step 126000, loss_cluster 0.000000 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000000 lr 0.000265
+step 127000, loss_cluster 0.000006 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000006 lr 0.000262
+step 128000, loss_cluster 0.000000 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000000 lr 0.000260
+step 129000, loss_cluster 0.000001 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000001 lr 0.000257
+step 130000, loss_cluster 0.000001 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000001 lr 0.000254
+5000 5000 1.0
+10000 10000 1.0
+14999 15000 0.9999333333333333
+19998 20000 0.9999
+24998 25000 0.99992
+29998 30000 0.9999333333333333
+34998 35000 0.9999428571428571
+39865 40000 0.996625
+42550 42686 0.9968139436817692
+test end!
+1 class: ( 6621.0 / 6621.0 ) 1.0
+2 class: ( 18637.0 / 18639.0 ) 0.9998926981061216
+3 class: ( 2089.0 / 2089.0 ) 1.0
+4 class: ( 3054.0 / 3054.0 ) 1.0
+5 class: ( 1335.0 / 1335.0 ) 1.0
+6 class: ( 5019.0 / 5019.0 ) 1.0
+7 class: ( 1319.0 / 1320.0 ) 0.9992424242424243
+8 class: ( 3539.0 / 3672.0 ) 0.9637799564270153
+9 class: ( 937.0 / 937.0 ) 1.0
+confusion matrix:
+[[ 6621     0     0     0     0     0     0     0     0]
+ [    0 18637     0     0     0     0     0     0     0]
+ [    0     0  2089     0     0     0     0   110     0]
+ [    0     0     0  3054     0     0     0     0     0]
+ [    0     0     0     0  1335     0     0     0     0]
+ [    0     0     0     0     0  5019     0     0     0]
+ [    0     0     0     0     0     0  1319    23     0]
+ [    0     0     0     0     0     0     1  3539     0]
+ [    0     2     0     0     0     0     0     0   937]]
+total right num: 42550.0
+oa: 0.9968139436817692
+aa: 0.9958794531972845
+kappa: 0.9957759344965352
+best accuracy:0.997892
+step 131000, loss_cluster 0.000000 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000000 lr 0.000252
+step 132000, loss_cluster 0.000000 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000000 lr 0.000249
+step 133000, loss_cluster 0.000001 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000001 lr 0.000246
+step 134000, loss_cluster 0.000000 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000000 lr 0.000244
+step 135000, loss_cluster 0.000000 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000000 lr 0.000241
+4998 5000 0.9996
+9995 10000 0.9995
+14995 15000 0.9996666666666667
+19995 20000 0.99975
+24995 25000 0.9998
+29995 30000 0.9998333333333334
+34995 35000 0.9998571428571429
+39859 40000 0.996475
+42543 42686 0.9966499554889191
+test end!
+1 class: ( 6616.0 / 6621.0 ) 0.999244827065398
+2 class: ( 18639.0 / 18639.0 ) 1.0
+3 class: ( 2089.0 / 2089.0 ) 1.0
+4 class: ( 3054.0 / 3054.0 ) 1.0
+5 class: ( 1335.0 / 1335.0 ) 1.0
+6 class: ( 5019.0 / 5019.0 ) 1.0
+7 class: ( 1317.0 / 1320.0 ) 0.9977272727272727
+8 class: ( 3537.0 / 3672.0 ) 0.9632352941176471
+9 class: ( 937.0 / 937.0 ) 1.0
+confusion matrix:
+[[ 6616     0     0     0     0     0     0     0     0]
+ [    0 18639     0     0     0     0     0     0     0]
+ [    0     0  2089     0     0     0     0   132     0]
+ [    0     0     0  3054     0     0     0     0     0]
+ [    0     0     0     0  1335     0     0     0     0]
+ [    0     0     0     0     0  5019     0     0     0]
+ [    1     0     0     0     0     0  1317     3     0]
+ [    4     0     0     0     0     0     3  3537     0]
+ [    0     0     0     0     0     0     0     0   937]]
+total right num: 42543.0
+oa: 0.9966499554889191
+aa: 0.9955785993233687
+kappa: 0.9955584055199879
+best accuracy:0.997892
+step 136000, loss_cluster 0.000014 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000014 lr 0.000239
+step 137000, loss_cluster 0.000000 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000000 lr 0.000236
+step 138000, loss_cluster 0.000002 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000002 lr 0.000234
+step 139000, loss_cluster 0.000000 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000000 lr 0.000231
+step 140000, loss_cluster 0.000001 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000001 lr 0.000229
+4999 5000 0.9998
+9996 10000 0.9996
+14990 15000 0.9993333333333333
+19987 20000 0.99935
+24983 25000 0.99932
+29981 30000 0.9993666666666666
+34981 35000 0.9994571428571428
+39830 40000 0.99575
+42513 42686 0.9959471489481329
+test end!
+1 class: ( 6619.0 / 6621.0 ) 0.9996979308261592
+2 class: ( 18622.0 / 18639.0 ) 0.9990879339020333
+3 class: ( 2089.0 / 2089.0 ) 1.0
+4 class: ( 3054.0 / 3054.0 ) 1.0
+5 class: ( 1335.0 / 1335.0 ) 1.0
+6 class: ( 5019.0 / 5019.0 ) 1.0
+7 class: ( 1318.0 / 1320.0 ) 0.9984848484848485
+8 class: ( 3520.0 / 3672.0 ) 0.9586056644880174
+9 class: ( 937.0 / 937.0 ) 1.0
+confusion matrix:
+[[ 6619     0     0     0     0     0     0     0     0]
+ [    0 18622     0     0     0     0     0     0     0]
+ [    0     0  2089     0     0     0     0   139     0]
+ [    0     0     0  3054     0     0     0     0     0]
+ [    0     2     0     0  1335     0     0     0     0]
+ [    0    10     0     0     0  5019     0     0     0]
+ [    0     0     0     0     0     0  1318    13     0]
+ [    2     0     0     0     0     0     2  3520     0]
+ [    0     5     0     0     0     0     0     0   937]]
+total right num: 42513.0
+oa: 0.9959471489481329
+aa: 0.9950973753001175
+kappa: 0.9946277168559484
+best accuracy:0.997892
+step 141000, loss_cluster 0.000000 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000000 lr 0.000226
+step 142000, loss_cluster 0.000000 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000000 lr 0.000224
+step 143000, loss_cluster 0.000000 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000000 lr 0.000222
+step 144000, loss_cluster 0.000000 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000000 lr 0.000219
+step 145000, loss_cluster 0.000000 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000000 lr 0.000217
+4999 5000 0.9998
+9998 10000 0.9998
+14994 15000 0.9996
+19992 20000 0.9996
+24988 25000 0.99952
+29984 30000 0.9994666666666666
+34984 35000 0.9995428571428572
+39885 40000 0.997125
+42571 42686 0.9973059082603195
+test end!
+1 class: ( 6620.0 / 6621.0 ) 0.9998489654130795
+2 class: ( 18624.0 / 18639.0 ) 0.9991952357959119
+3 class: ( 2089.0 / 2089.0 ) 1.0
+4 class: ( 3054.0 / 3054.0 ) 1.0
+5 class: ( 1335.0 / 1335.0 ) 1.0
+6 class: ( 5019.0 / 5019.0 ) 1.0
+7 class: ( 1318.0 / 1320.0 ) 0.9984848484848485
+8 class: ( 3575.0 / 3672.0 ) 0.9735838779956427
+9 class: ( 937.0 / 937.0 ) 1.0
+confusion matrix:
+[[ 6620     0     0     0     0     0     0     0     0]
+ [    0 18624     0     0     0     0     0     0     0]
+ [    0     0  2089     0     0     0     0    87     0]
+ [    0     0     0  3054     0     0     0     0     0]
+ [    0     2     0     0  1335     0     0     0     0]
+ [    0     3     0     0     0  5019     0     0     0]
+ [    0     0     0     0     0     0  1318    10     0]
+ [    1     0     0     0     0     0     2  3575     0]
+ [    0    10     0     0     0     0     0     0   937]]
+total right num: 42571.0
+oa: 0.9973059082603195
+aa: 0.9967903252988314
+kappa: 0.9964285715117192
+best accuracy:0.997892
+step 146000, loss_cluster 0.000001 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000001 lr 0.000215
+step 147000, loss_cluster 0.000028 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000028 lr 0.000213
+step 148000, loss_cluster 0.000000 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000000 lr 0.000210
+step 149000, loss_cluster 0.000000 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000000 lr 0.000208
+step 150000, loss_cluster 0.000000 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000000 lr 0.000206
+4999 5000 0.9998
+9999 10000 0.9999
+14998 15000 0.9998666666666667
+19998 20000 0.9999
+24998 25000 0.99992
+29998 30000 0.9999333333333333
+34998 35000 0.9999428571428571
+39929 40000 0.998225
+42615 42686 0.998336691186806
+test end!
+1 class: ( 6620.0 / 6621.0 ) 0.9998489654130795
+2 class: ( 18638.0 / 18639.0 ) 0.9999463490530608
+3 class: ( 2089.0 / 2089.0 ) 1.0
+4 class: ( 3054.0 / 3054.0 ) 1.0
+5 class: ( 1335.0 / 1335.0 ) 1.0
+6 class: ( 5019.0 / 5019.0 ) 1.0
+7 class: ( 1318.0 / 1320.0 ) 0.9984848484848485
+8 class: ( 3605.0 / 3672.0 ) 0.9817538126361656
+9 class: ( 937.0 / 937.0 ) 1.0
+confusion matrix:
+[[ 6620     0     0     0     0     0     0     0     0]
+ [    0 18638     0     0     0     0     0     0     0]
+ [    0     0  2089     0     0     0     0    65     0]
+ [    0     0     0  3054     0     0     0     0     0]
+ [    0     0     0     0  1335     0     0     0     0]
+ [    0     0     0     0     0  5019     0     0     0]
+ [    0     0     0     0     0     0  1318     2     0]
+ [    1     0     0     0     0     0     2  3605     0]
+ [    0     1     0     0     0     0     0     0   937]]
+total right num: 42615.0
+oa: 0.998336691186806
+aa: 0.9977815528430172
+kappa: 0.997794568311139
+best model saved...
+best accuracy:0.998337
+step 151000, loss_cluster 0.000000 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000000 lr 0.000204
+step 152000, loss_cluster 0.000000 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000000 lr 0.000202
+step 153000, loss_cluster 0.000000 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000000 lr 0.000199
+step 154000, loss_cluster 0.000000 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000000 lr 0.000197
+step 155000, loss_cluster 0.000000 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000000 lr 0.000195
+5000 5000 1.0
+10000 10000 1.0
+14957 15000 0.9971333333333333
+19943 20000 0.99715
+24941 25000 0.99764
+29938 30000 0.9979333333333333
+34938 35000 0.9982285714285715
+39872 40000 0.9968
+42558 42686 0.9970013587593122
+test end!
+1 class: ( 6621.0 / 6621.0 ) 1.0
+2 class: ( 18577.0 / 18639.0 ) 0.9966736412897688
+3 class: ( 2089.0 / 2089.0 ) 1.0
+4 class: ( 3054.0 / 3054.0 ) 1.0
+5 class: ( 1335.0 / 1335.0 ) 1.0
+6 class: ( 5019.0 / 5019.0 ) 1.0
+7 class: ( 1320.0 / 1320.0 ) 1.0
+8 class: ( 3606.0 / 3672.0 ) 0.9820261437908496
+9 class: ( 937.0 / 937.0 ) 1.0
+confusion matrix:
+[[ 6621     0     0     0     0     0     0     0     0]
+ [    0 18577     0     0     0     0     0     0     0]
+ [    0     0  2089     0     0     0     0    49     0]
+ [    0     0     0  3054     0     0     0     0     0]
+ [    0     4     0     0  1335     0     0     0     0]
+ [    0    51     0     0     0  5019     0     0     0]
+ [    0     0     0     0     0     0  1320    17     0]
+ [    0     2     0     0     0     0     0  3606     0]
+ [    0     5     0     0     0     0     0     0   937]]
+total right num: 42558.0
+oa: 0.9970013587593122
+aa: 0.997633309453402
+kappa: 0.9960265442252598
+best accuracy:0.998337
+step 156000, loss_cluster 0.000000 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000000 lr 0.000193
+step 157000, loss_cluster 0.000000 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000000 lr 0.000191
+step 158000, loss_cluster 0.000000 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000000 lr 0.000189
+step 159000, loss_cluster 0.000000 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000000 lr 0.000187
+step 160000, loss_cluster 0.000000 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000000 lr 0.000185
+5000 5000 1.0
+10000 10000 1.0
+14982 15000 0.9988
+19979 20000 0.99895
+24957 25000 0.99828
+29954 30000 0.9984666666666666
+34954 35000 0.9986857142857143
+39783 40000 0.994575
+42469 42686 0.9949163660216465
+test end!
+1 class: ( 6621.0 / 6621.0 ) 1.0
+2 class: ( 18593.0 / 18639.0 ) 0.9975320564407962
+3 class: ( 2089.0 / 2089.0 ) 1.0
+4 class: ( 3054.0 / 3054.0 ) 1.0
+5 class: ( 1335.0 / 1335.0 ) 1.0
+6 class: ( 5019.0 / 5019.0 ) 1.0
+7 class: ( 1318.0 / 1320.0 ) 0.9984848484848485
+8 class: ( 3503.0 / 3672.0 ) 0.9539760348583878
+9 class: ( 937.0 / 937.0 ) 1.0
+confusion matrix:
+[[ 6621     0     0     0     0     0     0     0     0]
+ [    0 18593     0     0     0     0     0     0     0]
+ [    0     0  2089     0     0     0     0   149     0]
+ [    0     0     0  3054     0     0     0     0     0]
+ [    0    29     0     0  1335     0     0     0     0]
+ [    0     0     0     0     0  5019     0     0     0]
+ [    0     0     0     0     0     0  1318    20     0]
+ [    0     1     0     0     0     0     2  3503     0]
+ [    0    16     0     0     0     0     0     0   937]]
+total right num: 42469.0
+oa: 0.9949163660216465
+aa: 0.9944436599760036
+kappa: 0.9932641347384636
+best accuracy:0.998337
+step 161000, loss_cluster 0.000000 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000000 lr 0.000183
+step 162000, loss_cluster 0.000000 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000000 lr 0.000181
+step 163000, loss_cluster 0.000001 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000001 lr 0.000180
+step 164000, loss_cluster 0.000000 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000000 lr 0.000178
+step 165000, loss_cluster 0.000000 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000000 lr 0.000176
+4999 5000 0.9998
+9998 10000 0.9998
+14955 15000 0.997
+19934 20000 0.9967
+24915 25000 0.9966
+29914 30000 0.9971333333333333
+34914 35000 0.9975428571428572
+39681 40000 0.992025
+42365 42686 0.9924799700135876
+test end!
+1 class: ( 6619.0 / 6621.0 ) 0.9996979308261592
+2 class: ( 18555.0 / 18639.0 ) 0.995493320457106
+3 class: ( 2089.0 / 2089.0 ) 1.0
+4 class: ( 3054.0 / 3054.0 ) 1.0
+5 class: ( 1335.0 / 1335.0 ) 1.0
+6 class: ( 5019.0 / 5019.0 ) 1.0
+7 class: ( 1317.0 / 1320.0 ) 0.9977272727272727
+8 class: ( 3440.0 / 3672.0 ) 0.9368191721132898
+9 class: ( 937.0 / 937.0 ) 1.0
+confusion matrix:
+[[ 6619     0     0     0     0     0     0     0     0]
+ [    0 18555     0     0     0     0     0     0     0]
+ [    0     0  2089     0     0     0     0   127     0]
+ [    0     1     0  3054     0     0     0     0     0]
+ [    0     9     0     0  1335     0     0     0     0]
+ [    0    51     0     0     0  5019     0     0     0]
+ [    0     0     0     0     0     0  1317   105     0]
+ [    2     0     0     0     0     0     3  3440     0]
+ [    0    23     0     0     0     0     0     0   937]]
+total right num: 42365.0
+oa: 0.9924799700135876
+aa: 0.9921930773470921
+kappa: 0.9900405335034018
+best accuracy:0.998337
+step 166000, loss_cluster 0.000000 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000000 lr 0.000174
+step 167000, loss_cluster 0.000000 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000000 lr 0.000172
+step 168000, loss_cluster 0.000001 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000001 lr 0.000170
+step 169000, loss_cluster 0.000000 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000000 lr 0.000169
+step 170000, loss_cluster 0.000000 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000000 lr 0.000167
+4999 5000 0.9998
+9998 10000 0.9998
+14997 15000 0.9998
+19996 20000 0.9998
+24995 25000 0.9998
+29995 30000 0.9998333333333334
+34995 35000 0.9998571428571429
+39865 40000 0.996625
+42551 42686 0.996837370566462
+test end!
+1 class: ( 6619.0 / 6621.0 ) 0.9996979308261592
+2 class: ( 18636.0 / 18639.0 ) 0.9998390471591824
+3 class: ( 2089.0 / 2089.0 ) 1.0
+4 class: ( 3054.0 / 3054.0 ) 1.0
+5 class: ( 1335.0 / 1335.0 ) 1.0
+6 class: ( 5019.0 / 5019.0 ) 1.0
+7 class: ( 1318.0 / 1320.0 ) 0.9984848484848485
+8 class: ( 3544.0 / 3672.0 ) 0.9651416122004357
+9 class: ( 937.0 / 937.0 ) 1.0
+confusion matrix:
+[[ 6619     0     0     0     0     0     0     0     0]
+ [    0 18636     0     0     0     0     0     0     0]
+ [    0     0  2089     0     0     0     0   124     0]
+ [    0     0     0  3054     0     0     0     0     0]
+ [    0     0     0     0  1335     0     0     0     0]
+ [    0     0     0     0     0  5019     0     0     0]
+ [    0     0     0     0     0     0  1318     4     0]
+ [    2     0     0     0     0     0     2  3544     0]
+ [    0     3     0     0     0     0     0     0   937]]
+total right num: 42551.0
+oa: 0.996837370566462
+aa: 0.9959070487411807
+kappa: 0.9958069899026196
+best accuracy:0.998337
+step 171000, loss_cluster 0.000004 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000004 lr 0.000165
+step 172000, loss_cluster 0.000000 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000000 lr 0.000163
+step 173000, loss_cluster 0.000000 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000000 lr 0.000162
+step 174000, loss_cluster 0.000000 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000000 lr 0.000160
+step 175000, loss_cluster 0.000000 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000000 lr 0.000158
+4999 5000 0.9998
+9999 10000 0.9999
+14980 15000 0.9986666666666667
+19970 20000 0.9985
+24955 25000 0.9982
+29952 30000 0.9984
+34952 35000 0.9986285714285714
+39808 40000 0.9952
+42494 42686 0.9955020381389683
+test end!
+1 class: ( 6620.0 / 6621.0 ) 0.9998489654130795
+2 class: ( 18592.0 / 18639.0 ) 0.9974784054938569
+3 class: ( 2089.0 / 2089.0 ) 1.0
+4 class: ( 3054.0 / 3054.0 ) 1.0
+5 class: ( 1335.0 / 1335.0 ) 1.0
+6 class: ( 5019.0 / 5019.0 ) 1.0
+7 class: ( 1319.0 / 1320.0 ) 0.9992424242424243
+8 class: ( 3529.0 / 3672.0 ) 0.9610566448801743
+9 class: ( 937.0 / 937.0 ) 1.0
+confusion matrix:
+[[ 6620     0     0     0     0     0     0     0     0]
+ [    0 18592     0     0     0     0     0     0     0]
+ [    0     0  2089     0     0     0     0   107     0]
+ [    0     0     0  3054     0     0     0     0     0]
+ [    0     3     0     0  1335     0     0     0     0]
+ [    0    20     0     0     0  5019     0     0     0]
+ [    0     0     0     0     0     0  1319    36     0]
+ [    1     0     0     0     0     0     1  3529     0]
+ [    0    24     0     0     0     0     0     0   937]]
+total right num: 42494.0
+oa: 0.9955020381389683
+aa: 0.9952918266699484
+kappa: 0.9940398335845607
+best accuracy:0.998337
+step 176000, loss_cluster 0.000000 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000000 lr 0.000157
+step 177000, loss_cluster 0.000000 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000000 lr 0.000155
+step 178000, loss_cluster 0.000000 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000000 lr 0.000153
+step 179000, loss_cluster 0.000000 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000000 lr 0.000152
+step 180000, loss_cluster 0.000000 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000000 lr 0.000150
+4999 5000 0.9998
+9999 10000 0.9999
+14988 15000 0.9992
+19987 20000 0.99935
+24978 25000 0.99912
+29976 30000 0.9992
+34976 35000 0.9993142857142857
+39919 40000 0.997975
+42605 42686 0.9981024223398772
+test end!
+1 class: ( 6620.0 / 6621.0 ) 0.9998489654130795
+2 class: ( 18616.0 / 18639.0 ) 0.9987660282203981
+3 class: ( 2089.0 / 2089.0 ) 1.0
+4 class: ( 3054.0 / 3054.0 ) 1.0
+5 class: ( 1335.0 / 1335.0 ) 1.0
+6 class: ( 5019.0 / 5019.0 ) 1.0
+7 class: ( 1319.0 / 1320.0 ) 0.9992424242424243
+8 class: ( 3616.0 / 3672.0 ) 0.9847494553376906
+9 class: ( 937.0 / 937.0 ) 1.0
+confusion matrix:
+[[ 6620     0     0     0     0     0     0     0     0]
+ [    0 18616     0     0     0     0     0     0     0]
+ [    0     0  2089     0     0     0     0    51     0]
+ [    0     0     0  3054     0     0     0     0     0]
+ [    1     4     0     0  1335     0     0     0     0]
+ [    0     2     0     0     0  5019     0     0     0]
+ [    0     0     0     0     0     0  1319     5     0]
+ [    0     0     0     0     0     0     1  3616     0]
+ [    0    17     0     0     0     0     0     0   937]]
+total right num: 42605.0
+oa: 0.9981024223398772
+aa: 0.9980674303570658
+kappa: 0.9974846200547469
+best accuracy:0.998337
+step 181000, loss_cluster 0.000000 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000000 lr 0.000149
+step 182000, loss_cluster 0.000000 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000000 lr 0.000147
+step 183000, loss_cluster 0.000000 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000000 lr 0.000145
+step 184000, loss_cluster 0.000000 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000000 lr 0.000144
+step 185000, loss_cluster 0.000000 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000000 lr 0.000142
+4997 5000 0.9994
+9997 10000 0.9997
+14995 15000 0.9996666666666667
+19994 20000 0.9997
+24990 25000 0.9996
+29990 30000 0.9996666666666667
+34990 35000 0.9997142857142857
+39941 40000 0.998525
+42627 42686 0.9986178138031204
+test end!
+1 class: ( 6618.0 / 6621.0 ) 0.9995468962392388
+2 class: ( 18632.0 / 18639.0 ) 0.9996244433714255
+3 class: ( 2089.0 / 2089.0 ) 1.0
+4 class: ( 3054.0 / 3054.0 ) 1.0
+5 class: ( 1335.0 / 1335.0 ) 1.0
+6 class: ( 5019.0 / 5019.0 ) 1.0
+7 class: ( 1314.0 / 1320.0 ) 0.9954545454545455
+8 class: ( 3629.0 / 3672.0 ) 0.9882897603485838
+9 class: ( 937.0 / 937.0 ) 1.0
+confusion matrix:
+[[ 6618     0     0     0     0     0     0     0     0]
+ [    0 18632     0     0     0     0     0     0     0]
+ [    0     0  2089     0     0     0     0    38     0]
+ [    0     0     0  3054     0     0     0     0     0]
+ [    1     0     0     0  1335     0     0     0     0]
+ [    0     0     0     0     0  5019     0     0     0]
+ [    1     0     0     0     0     0  1314     5     0]
+ [    1     0     0     0     0     0     6  3629     0]
+ [    0     7     0     0     0     0     0     0   937]]
+total right num: 42627.0
+oa: 0.9986178138031204
+aa: 0.9981017383793104
+kappa: 0.9981674129536359
+best model saved...
+best accuracy:0.998618
+step 186000, loss_cluster 0.000000 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000000 lr 0.000141
+step 187000, loss_cluster 0.000000 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000000 lr 0.000139
+step 188000, loss_cluster 0.000000 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000000 lr 0.000138
+step 189000, loss_cluster 0.000002 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000002 lr 0.000137
+step 190000, loss_cluster 0.000002 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000002 lr 0.000135
+5000 5000 1.0
+9999 10000 0.9999
+14984 15000 0.9989333333333333
+19979 20000 0.99895
+24969 25000 0.99876
+29966 30000 0.9988666666666667
+34966 35000 0.9990285714285714
+39723 40000 0.993075
+42407 42686 0.9934638991706883
+test end!
+1 class: ( 6621.0 / 6621.0 ) 1.0
+2 class: ( 18605.0 / 18639.0 ) 0.9981758678040668
+3 class: ( 2089.0 / 2089.0 ) 1.0
+4 class: ( 3054.0 / 3054.0 ) 1.0
+5 class: ( 1335.0 / 1335.0 ) 1.0
+6 class: ( 5019.0 / 5019.0 ) 1.0
+7 class: ( 1317.0 / 1320.0 ) 0.9977272727272727
+8 class: ( 3430.0 / 3672.0 ) 0.9340958605664488
+9 class: ( 937.0 / 937.0 ) 1.0
+confusion matrix:
+[[ 6621     0     0     0     0     0     0     0     0]
+ [    0 18605     0     0     0     0     0     0     0]
+ [    0     0  2089     0     0     0     0   130     0]
+ [    0     0     0  3054     0     0     0     0     0]
+ [    0     2     0     0  1335     0     0     0     0]
+ [    0    16     0     0     0  5019     0     0     0]
+ [    0     0     0     0     0     0  1317   112     0]
+ [    0     0     0     0     0     0     3  3430     0]
+ [    0    16     0     0     0     0     0     0   937]]
+total right num: 42407.0
+oa: 0.9934638991706883
+aa: 0.9922221112330875
+kappa: 0.9913390960669921
+best accuracy:0.998618
+step 191000, loss_cluster 0.000000 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000000 lr 0.000134
+step 192000, loss_cluster 0.000000 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000000 lr 0.000132
+step 193000, loss_cluster 0.000000 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000000 lr 0.000131
+step 194000, loss_cluster 0.000000 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000000 lr 0.000130
+step 195000, loss_cluster 0.000000 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000000 lr 0.000128
+5000 5000 1.0
+9998 10000 0.9998
+14986 15000 0.9990666666666667
+19981 20000 0.99905
+24964 25000 0.99856
+29961 30000 0.9987
+34961 35000 0.9988857142857143
+39754 40000 0.99385
+42440 42686 0.9942369863655531
+test end!
+1 class: ( 6619.0 / 6621.0 ) 0.9996979308261592
+2 class: ( 18602.0 / 18639.0 ) 0.9980149149632491
+3 class: ( 2089.0 / 2089.0 ) 1.0
+4 class: ( 3054.0 / 3054.0 ) 1.0
+5 class: ( 1335.0 / 1335.0 ) 1.0
+6 class: ( 5019.0 / 5019.0 ) 1.0
+7 class: ( 1318.0 / 1320.0 ) 0.9984848484848485
+8 class: ( 3467.0 / 3672.0 ) 0.9441721132897604
+9 class: ( 937.0 / 937.0 ) 1.0
+confusion matrix:
+[[ 6619     0     0     0     0     0     0     0     0]
+ [    0 18602     0     0     0     0     0     0     0]
+ [    0     0  2089     0     0     0     0   183     0]
+ [    0     0     0  3054     0     0     0     0     0]
+ [    0     7     0     0  1335     0     0     0     0]
+ [    0     8     0     0     0  5019     0     0     0]
+ [    0     0     0     0     0     0  1318    22     0]
+ [    2     0     0     0     0     0     2  3467     0]
+ [    0    22     0     0     0     0     0     0   937]]
+total right num: 42440.0
+oa: 0.9942369863655531
+aa: 0.9933744230626687
+kappa: 0.9923633054658826
+best accuracy:0.998618
+step 196000, loss_cluster 0.000000 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000000 lr 0.000127
+step 197000, loss_cluster 0.000000 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000000 lr 0.000125
+step 198000, loss_cluster 0.000000 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000000 lr 0.000124
+step 199000, loss_cluster 0.000000 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000000 lr 0.000123
+step 200000, loss_cluster 0.000000 ,loss_classification 0.000000,loss_fusion 0.000000,loss_total 0.000000 lr 0.000122
+5000 5000 1.0
+10000 10000 1.0
+14997 15000 0.9998
+19996 20000 0.9998
+24990 25000 0.9996
+29989 30000 0.9996333333333334
+34989 35000 0.9996857142857143
+39828 40000 0.9957
+42514 42686 0.9959705758328258
+test end!
+1 class: ( 6621.0 / 6621.0 ) 1.0
+2 class: ( 18628.0 / 18639.0 ) 0.9994098395836687
+3 class: ( 2089.0 / 2089.0 ) 1.0
+4 class: ( 3054.0 / 3054.0 ) 1.0
+5 class: ( 1335.0 / 1335.0 ) 1.0
+6 class: ( 5019.0 / 5019.0 ) 1.0
+7 class: ( 1319.0 / 1320.0 ) 0.9992424242424243
+8 class: ( 3512.0 / 3672.0 ) 0.9564270152505446
+9 class: ( 937.0 / 937.0 ) 1.0
+confusion matrix:
+[[ 6621     0     0     0     0     0     0     0     0]
+ [    0 18628     0     0     0     0     0     0     0]
+ [    0     0  2089     0     0     0     0   142     0]
+ [    0     0     0  3054     0     0     0     0     0]
+ [    0     1     0     0  1335     0     0     0     0]
+ [    0     0     0     0     0  5019     0     0     0]
+ [    0     0     0     0     0     0  1319    18     0]
+ [    0     0     0     0     0     0     1  3512     0]
+ [    0    10     0     0     0     0     0     0   937]]
+total right num: 42514.0
+oa: 0.9959705758328258
+aa: 0.9950088087862932
+kappa: 0.9946585683315562
+best accuracy:0.998618
+Groundtruth map get finished
+map draw end!
+decode map get finished
+test end!
+seg decode map get finished
