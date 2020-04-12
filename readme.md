@@ -10,7 +10,7 @@ We use a simple K-means to unlabeled samples and divided them into K clusters, w
 
 Each training batch contains a part of labeled samples associated with true label and unlabeled samples assiciated with cluster label.
 
-Loss function is a standred entropy, we add the three parts losses directly.
+Loss function is a standred crossentropy, we add the three parts losses directly.
 
 We implement our algorithm in ubuntu16.04 with python3.5, the requirement packages as following:
 
